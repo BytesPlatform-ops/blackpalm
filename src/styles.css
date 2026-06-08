@@ -107,9 +107,7 @@
   }
 }
 
-@utility font-display {
-  font-family: var(--font-display);
-}
+/* font-display utility auto-generated from --font-display theme token */
 
 @utility eyebrow {
   font-family: var(--font-sans);
