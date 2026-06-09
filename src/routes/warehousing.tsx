@@ -2,7 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { Layout, Reveal } from "@/components/Layout";
+<<<<<<< HEAD
 import { IllShield, IllConsolidate, IllChart, IllExpand, IllWarehouse } from "@/components/Illustrations";
+=======
+import { IllShield, IllConsolidate, IllChart, IllExpand } from "@/components/Illustrations";
+import { Img, CinematicBand } from "@/components/Media";
+import { IMG, VIDEO } from "@/lib/assets";
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 import { FAQ } from "@/components/FAQ";
 import { PageHero } from "./about";
 
@@ -19,10 +25,17 @@ export const Route = createFileRoute("/warehousing")({
 });
 
 const features = [
+<<<<<<< HEAD
   { t: "State-of-the-Art Security", c: "Advanced security systems, surveillance, and controlled access. Cybersecurity protocols protect your data. Peace of mind, end to end.", Ill: IllShield },
   { t: "Flexible Storage Options", c: "Range of storage solutions adaptable to your specific requirements — from standard pallets to delicate, high-value items.", Ill: IllConsolidate },
   { t: "Efficient Inventory Management", c: "Cutting-edge real-time inventory tracking. Monitor stock levels, manage order fulfillment, plan ahead — all with precision.", Ill: IllChart },
   { t: "Scalable Solutions", c: "As your business grows, our warehousing scales with you. Built for businesses in growth or with seasonal inventory fluctuation.", Ill: IllExpand },
+=======
+  { t: "State-of-the-Art Security", c: "Advanced security systems, surveillance, and controlled access. Cybersecurity protocols protect your data. Peace of mind, end to end.", Ill: IllShield, img: IMG.distributionCenter },
+  { t: "Flexible Storage Options", c: "Range of storage solutions adaptable to your specific requirements — from standard pallets to delicate, high-value items.", Ill: IllConsolidate, img: IMG.warehouseBoxes },
+  { t: "Efficient Inventory Management", c: "Cutting-edge real-time inventory tracking. Monitor stock levels, manage order fulfillment, plan ahead — all with precision.", Ill: IllChart, img: IMG.inventoryScan },
+  { t: "Scalable Solutions", c: "As your business grows, our warehousing scales with you. Built for businesses in growth or with seasonal inventory fluctuation.", Ill: IllExpand, img: IMG.warehouseForklift },
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 ];
 
 const plans = [
@@ -33,6 +46,7 @@ const plans = [
 function WarehousingPage() {
   return (
     <Layout>
+<<<<<<< HEAD
       <PageHero eyebrow="3rd Party Logistics" title="Secure, Scalable Warehousing." sub="Forefront of logistics excellence — secure, flexible, scalable storage from Fort Lauderdale." />
 
       {/* Overview illustration */}
@@ -46,6 +60,43 @@ function WarehousingPage() {
               </p>
             </div>
           </Reveal>
+=======
+      <PageHero eyebrow="3rd Party Logistics" title="Secure, Scalable Warehousing." sub="Forefront of logistics excellence — secure, flexible, scalable storage from Fort Lauderdale." image={IMG.warehouseAisle} />
+
+      {/* Overview: facility image + stat strip */}
+      <section className="bg-white">
+        <div className="container-x py-20 lg:py-28">
+          <Reveal>
+            <div className="relative rounded-3xl overflow-hidden max-w-6xl mx-auto shadow-[0_50px_100px_-50px_rgba(10,10,10,0.5)]">
+              <Img src={IMG.distributionCenter} alt="BlackPalm distribution center in Fort Lauderdale" className="aspect-[21/9]" rounded="rounded-none" overlay="full" priority />
+              <div className="absolute inset-0 flex items-end p-8 lg:p-12">
+                <div className="max-w-2xl">
+                  <h2 className="font-display font-bold text-2xl md:text-4xl !text-white leading-tight">
+                    A facility built around your inventory.
+                  </h2>
+                  <p className="mt-3 text-white/80 max-w-xl text-sm md:text-base">
+                    BlackPalm's warehousing solutions are at the forefront of logistics excellence — secure, flexible, and scalable storage for every business need.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { v: "24/7", l: "Surveillance" },
+              { v: "100%", l: "Inventory accuracy" },
+              { v: "Same-day", l: "Order fulfillment" },
+              { v: "Flexible", l: "Month-to-month" },
+            ].map((s) => (
+              <Reveal key={s.l}>
+                <div className="text-center md:text-left border-t-2 border-coral/30 pt-3">
+                  <p className="font-display font-bold text-2xl md:text-3xl text-ink">{s.v}</p>
+                  <p className="text-xs text-muted-text uppercase tracking-wider mt-1">{s.l}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
         </div>
       </section>
 
@@ -63,8 +114,16 @@ function WarehousingPage() {
                   </div>
                 </Reveal>
                 <Reveal delay={0.1}>
+<<<<<<< HEAD
                   <div className="lg:[direction:ltr] aspect-square max-w-sm mx-auto p-8 rounded-3xl bg-cream border border-hairline">
                     <f.Ill />
+=======
+                  <div className="lg:[direction:ltr] relative group">
+                    <Img src={f.img} alt={f.t} className="aspect-[4/3] shadow-[0_40px_80px_-46px_rgba(10,10,10,0.45)]" rounded="rounded-3xl" zoom overlay="full" />
+                    <div className="absolute -bottom-5 -left-3 hidden sm:block w-20 h-20 rounded-2xl glass-light p-4">
+                      <f.Ill />
+                    </div>
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
                   </div>
                 </Reveal>
               </div>
@@ -73,6 +132,26 @@ function WarehousingPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+=======
+      {/* Cinematic warehouse band */}
+      <CinematicBand poster={IMG.warehouseForklift} videoSrc={VIDEO.warehouse.src} minH="min-h-[440px]">
+        <div className="max-w-2xl">
+          <Reveal><p className="eyebrow">Inside the operation</p></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-3 font-display font-bold text-4xl md:text-5xl !text-white leading-[1.05]">
+              Your products, handled like our own.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-5 text-white/75 text-lg max-w-xl leading-relaxed">
+              Trained staff, controlled access, and real-time inventory visibility — every pallet tracked from inbound receiving to outbound dispatch.
+            </p>
+          </Reveal>
+        </div>
+      </CinematicBand>
+
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
       {/* Pricing */}
       <section className="bg-cream">
         <div className="container-x py-24">

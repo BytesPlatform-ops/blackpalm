@@ -29,7 +29,10 @@ export function Layout({ children }: { children: ReactNode }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+<<<<<<< HEAD
           className="pt-[76px]"
+=======
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
         >
           {children}
         </motion.main>

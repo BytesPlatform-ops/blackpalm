@@ -1,9 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+<<<<<<< HEAD
 import { ArrowUpRight, Check } from "lucide-react";
 import { Layout, Reveal } from "@/components/Layout";
 import { IllPlane, IllShip } from "@/components/Illustrations";
+=======
+import { ArrowUpRight, Check, ShieldCheck, Clock, BadgeDollarSign, ArrowRight } from "lucide-react";
+import { Layout, Reveal, Stagger, StaggerItem } from "@/components/Layout";
+import { IllPlane, IllShip } from "@/components/Illustrations";
+import { SectionHeading } from "@/components/Media";
+import { IMG } from "@/lib/assets";
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 import { FAQ } from "@/components/FAQ";
 import { PageHero } from "./about";
 
@@ -39,7 +47,30 @@ const tiers = [
 function RatesPage() {
   return (
     <Layout>
+<<<<<<< HEAD
       <PageHero eyebrow="Transparent pricing" title="Shipping Rates, Made Simple." sub="Clear tiers. Instant quotes. No surprise fees." />
+=======
+      <PageHero eyebrow="Transparent pricing" title="Shipping Rates, Made Simple." sub="Clear tiers. Instant quotes. No surprise fees." image={IMG.cargoShipPort} />
+
+      {/* Trust strip */}
+      <section className="bg-white border-b border-hairline">
+        <div className="container-x py-8 grid sm:grid-cols-3 gap-6">
+          {[
+            { Icon: BadgeDollarSign, t: "No surprise fees", c: "Every line item shown before you ship." },
+            { Icon: Clock, t: "Quotes in hours", c: "Tailored estimates, typically same day." },
+            { Icon: ShieldCheck, t: "Insured transit", c: "Coverage available on every shipment." },
+          ].map((x) => (
+            <div key={x.t} className="flex items-center gap-4">
+              <span className="w-11 h-11 rounded-xl bg-coral-soft text-coral grid place-items-center shrink-0"><x.Icon size={20} /></span>
+              <div>
+                <p className="font-display font-bold text-sm">{x.t}</p>
+                <p className="text-xs text-muted-text mt-0.5">{x.c}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 
       {/* Tiers */}
       <section className="bg-white">
@@ -79,8 +110,52 @@ function RatesPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Quote form */}
       <section id="quote" className="bg-cream scroll-mt-24">
+=======
+      {/* Popular lanes */}
+      <section className="bg-cream">
+        <div className="container-x py-20">
+          <SectionHeading center eyebrow="Example lanes" title="Popular routes & indicative pricing." sub="Representative estimates for common shipments. Your exact quote depends on weight, dimensions, and service tier." />
+          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { from: "Miami, FL", to: "Kingston, JM", mode: "Air", transit: "2–3 days", price: "from $42" },
+              { from: "Fort Lauderdale", to: "Nassau, BS", mode: "Air", transit: "1–2 days", price: "from $38" },
+              { from: "Miami, FL", to: "Port of Spain, TT", mode: "Ocean", transit: "8–12 days", price: "from $26" },
+              { from: "Miami, FL", to: "Georgetown, GY", mode: "Ocean", transit: "10–14 days", price: "from $29" },
+              { from: "Fort Lauderdale", to: "Santo Domingo, DO", mode: "Air", transit: "2–4 days", price: "from $40" },
+              { from: "Miami, FL", to: "Bridgetown, BB", mode: "Ocean", transit: "9–13 days", price: "from $31" },
+            ].map((l) => (
+              <StaggerItem key={`${l.from}-${l.to}`}>
+                <div className="card-premium p-6 h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`chip ${l.mode === "Air" ? "" : ""}`}>{l.mode === "Air" ? "✈ Air Freight" : "🚢 Ocean Freight"}</span>
+                    <span className="font-display font-bold text-coral text-lg">{l.price}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm font-display font-semibold">
+                    <span>{l.from}</span>
+                    <ArrowRight size={16} className="text-coral shrink-0" />
+                    <span>{l.to}</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-hairline flex items-center gap-2 text-xs text-muted-text">
+                    <Clock size={13} className="text-coral" /> Est. transit {l.transit} · per kg/cbm
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+          <Reveal>
+            <p className="mt-8 text-center text-sm text-muted-text">
+              Pricing is indicative and per billable unit. <a href="#quote" className="text-coral font-semibold">Get your exact quote ↓</a>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Quote form */}
+      <section id="quote" className="bg-white scroll-mt-24">
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
         <div className="container-x py-24">
           <div className="max-w-3xl mx-auto">
             <Reveal><p className="eyebrow text-center">Quick quote</p></Reveal>
@@ -100,7 +175,11 @@ function RatesPage() {
       </section>
 
       {/* FAQ */}
+<<<<<<< HEAD
       <section className="bg-white">
+=======
+      <section className="bg-cream">
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
         <div className="container-x py-24 grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
           <Reveal>
             <div>

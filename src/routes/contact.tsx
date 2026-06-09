@@ -1,8 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+<<<<<<< HEAD
 import { ArrowUpRight, Check, Facebook, Instagram, Linkedin, MapPin, Mail, Phone, Clock } from "lucide-react";
 import { Layout, Reveal } from "@/components/Layout";
+=======
+import { ArrowUpRight, Check, Facebook, Instagram, Linkedin, MapPin, Mail, Phone, Clock, MessageCircle } from "lucide-react";
+import { Layout, Reveal } from "@/components/Layout";
+import { Img } from "@/components/Media";
+import { IMG } from "@/lib/assets";
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 import { PageHero } from "./about";
 
 const REGISTER_URL = "https://blackpalm.app/";
@@ -22,12 +29,43 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <Layout>
+<<<<<<< HEAD
       <PageHero eyebrow="Get in touch" title="We Love to Hear From You." sub="Questions, quotes, partnerships — we're here, and we answer." />
+=======
+      <PageHero eyebrow="Get in touch" title="We Love to Hear From You." sub="Questions, quotes, partnerships — we're here, and we answer." image={IMG.supportAgent} />
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 
       <section className="bg-white">
         <div className="container-x py-20 lg:py-28 grid lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20">
           <Reveal>
             <div>
+<<<<<<< HEAD
+=======
+              {/* Support team card */}
+              <div className="rounded-2xl bg-cream border border-hairline p-6 mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
+                    {[IMG.opsManager, IMG.warehouseManager, IMG.businessOwner].map((src, i) => (
+                      <span key={i} className="w-11 h-11 rounded-full ring-2 ring-cream overflow-hidden">
+                        <Img src={src} alt="BlackPalm support specialist" rounded="rounded-full" className="w-full h-full" />
+                      </span>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="font-display font-bold text-sm flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Support team online
+                    </p>
+                    <p className="text-xs text-muted-text mt-0.5">Avg. response under 2 hours · Mon–Fri</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a href="tel:+19546638243" className="chip"><Phone size={13} className="text-coral" /> Call us</a>
+                  <a href="mailto:roletobain@blackpalmei.com" className="chip"><Mail size={13} className="text-coral" /> Email</a>
+                  <span className="chip"><MessageCircle size={13} className="text-coral" /> Personal reply</span>
+                </div>
+              </div>
+
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
               <p className="text-body leading-relaxed text-lg">
                 Your questions and feedback are important to us. Whether it's about our services, quotes, or support — we're here to help.
               </p>

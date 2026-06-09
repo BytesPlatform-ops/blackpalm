@@ -20,6 +20,12 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+<<<<<<< HEAD
+=======
+# Oversized source videos (exceed Cloudflare 25 MiB/file limit, not deployed)
+assets-raw/
+
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

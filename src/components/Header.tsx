@@ -32,11 +32,19 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+<<<<<<< HEAD
         scrolled ? "bg-white/85 backdrop-blur-md shadow-[0_2px_20px_-12px_rgba(0,0,0,0.2)]" : "bg-white/70 backdrop-blur-sm"
       }`}
     >
       <div className="container-x flex items-center justify-between" style={{ height: scrolled ? 64 : 76, transition: "height .3s ease" }}>
         <SiteLogo variant="dark" />
+=======
+        scrolled ? "bg-white/85 backdrop-blur-md shadow-[0_2px_20px_-12px_rgba(0,0,0,0.2)]" : "bg-transparent"
+      }`}
+    >
+      <div className="container-x flex items-center justify-between" style={{ height: scrolled ? 64 : 80, transition: "height .3s ease" }}>
+        <SiteLogo variant={scrolled ? "dark" : "light"} />
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
 
         <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((n) => {
@@ -45,7 +53,11 @@ export function Header() {
               <Link
                 key={n.to}
                 to={n.to}
+<<<<<<< HEAD
                 className="relative text-sm font-medium text-ink hover:text-coral transition-colors"
+=======
+                className={`relative text-sm font-medium transition-colors hover:text-coral ${scrolled ? "text-ink" : "text-white/90"}`}
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
               >
                 {n.label}
                 {active && (
@@ -66,7 +78,11 @@ export function Header() {
         </div>
 
         <button
+<<<<<<< HEAD
           className="lg:hidden p-2 -mr-2 text-ink"
+=======
+          className={`lg:hidden p-2 -mr-2 transition-colors ${scrolled ? "text-ink" : "text-white"}`}
+>>>>>>> 410b767 (BlackPalm Export-Import — premium enterprise homepage (V5))
           aria-label="Open menu"
           onClick={() => setOpen(true)}
         >
