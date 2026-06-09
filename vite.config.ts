@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force-enable the nitro Cloudflare build outside Lovable so `wrangler deploy`
+  // has a Worker bundle to ship.
+  nitro: true,
 });
